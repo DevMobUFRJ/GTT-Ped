@@ -14,17 +14,17 @@ export default function HomeScreen() {
       
       {/* Container dos botões */}
       <View style={styles.buttonsContainer}>
-        <Link href="/" asChild>
+        <Link href="/(tabs)/(home)/duvidas" asChild>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>DÚVIDAS</Text>
+            <Text style={styles.buttonText}>Dúvidas</Text>
           </TouchableOpacity>
         </Link>
         
-        <Link href="/intercorrencias" asChild>
+        {/* <Link href="/intercorrencias" asChild> */}
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>INTERCORRÊNCIAS</Text>
+            <Text style={styles.buttonText}>Intercorrências</Text>
           </TouchableOpacity>
-        </Link>
+        {/* </Link> */}
       </View>
     </View>
   );

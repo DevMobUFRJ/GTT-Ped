@@ -6,7 +6,7 @@ import { HapticTab } from '@/components/HapticTab';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { CalendarDays, Home, MessageCircle, Settings } from 'lucide-react-native';
+import { CalendarDays, Home } from 'lucide-react-native';
 
 
 
@@ -30,20 +30,20 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
-        name="index"
+        name="(home)"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <Home color={color} size={28} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="(agenda)"
         options={{
           title: 'Agenda',
           tabBarIcon: ({ color }) => <CalendarDays color={color} size={28} />,
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="sondinha"
         options={{
           title: 'Sondinha',
@@ -56,7 +56,7 @@ export default function TabLayout() {
           title: 'Configurações',
           tabBarIcon: ({ color }) => <Settings color={color} size={28} />,
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
