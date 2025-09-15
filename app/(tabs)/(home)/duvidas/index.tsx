@@ -95,10 +95,9 @@ export default function DuvidasScreen() {
               key={duvida.id}
               id={duvida.id}
               titulo={duvida.titulo}
-              conteudo={duvida.conteudo}
-              imagemUrl={duvida.imagemUrl}
             />
           ))}
+
         </ScrollView>
       </SafeAreaView>
     </TouchableWithoutFeedback>

@@ -1,78 +1,61 @@
 import { useRouter } from 'expo-router';
 import { ArrowUpRight } from 'lucide-react-native';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type DuvidaCardProps = {
-    id: string;
-    titulo: string;
-    conteudo: React.ReactNode;
-    imagemUrl: string;
+  id: string;
+  titulo: string;
 };
 
-export default function DuvidaCard({ id, titulo, conteudo, imagemUrl }: DuvidaCardProps) {
-    const router = useRouter();
+export default function DuvidaCard({ id, titulo }: DuvidaCardProps) {
+  const router = useRouter();
 
-    function handlePress() {
-        router.push(`/(tabs)/(home)/duvidas/${id}`);
-    }
+  function handlePress() {
+    router.push(`/(tabs)/(home)/duvidas/${id}`);
+  }
 
-    return (
-        <TouchableOpacity style={styles.card} onPress={handlePress} activeOpacity={0.8}>
-            <Image source={{ uri: imagemUrl }} style={styles.image} resizeMode="cover" />
-            <View style={styles.header}>
-                <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
-                    {titulo}
-                </Text>
-                <ArrowUpRight size={24} color="#19856E" />
-            </View>
-            <View style={{ paddingHorizontal: 12, paddingBottom: 12, maxHeight: 100, overflow: 'hidden' }}>
-                {conteudo}
-            </View>
-        </TouchableOpacity>
-    );
+  return (
+    <TouchableOpacity style={styles.card} onPress={handlePress} activeOpacity={0.8}>
+      <View style={styles.header}>
+        <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
+          {titulo}
+        </Text>
+        <ArrowUpRight size={20} color="#19856E" />
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({
-    card: {
-        backgroundColor: '#f1f1f1',
-        borderRadius: 8,
-        padding: 10,
-        marginBottom: 16,
+  card: {
+    backgroundColor: '#f1f1f1',
+    borderRadius: 8,
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+    marginBottom: 12,
 
-        // Android shadow
-        elevation: 4,
+    // Android shadow
+    elevation: 2,
 
-        // iOS shadow
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 6,
+    // iOS shadow
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+  },
 
-        overflow: 'hidden',
-    },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
 
-    image: {
-        width: '100%',
-        height: 180,
-        backgroundColor: '#ccc'
-    },
-
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingHorizontal: 12,
-        paddingTop: 12,
-        paddingBottom: 24,
-    },
-
-    title: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#19856E',
-        flex: 1,
-        marginRight: 8,
-    },
-
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#19856E',
+    flex: 1,
+    marginRight: 8,
+  },
 });

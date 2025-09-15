@@ -19,12 +19,12 @@ export default function HomeScreen() {
             <Text style={styles.buttonText}>Dúvidas</Text>
           </TouchableOpacity>
         </Link>
-        
-        {/* <Link href="/intercorrencias" asChild> */}
+
+        <Link href="/(tabs)/(home)/intercorrencias" asChild> 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Intercorrências</Text>
           </TouchableOpacity>
-        {/* </Link> */}
+        </Link> 
       </View>
     </View>
   );

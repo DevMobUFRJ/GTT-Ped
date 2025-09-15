@@ -1,3 +1,4 @@
+//import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState } from 'react';
 import {
   Dimensions,
@@ -22,6 +23,28 @@ const compromissosMock = [
   { hora: '18:30', categoria: 'CONSULTA', cor: '#40C057', descricao: 'Gastro', tempo: 'Em 5 h' },
   { hora: '21:30', categoria: 'MEDICAMENTO', cor: '#FFA94D', descricao: 'Antibiótico profilaxia', tempo: 'Em 8 h' },
 ];
+
+/*
+type Compromisso = {
+  id: string;
+  titulo: string;
+  descricao?: string;
+  dataHora: Date;
+  categoria: 'MEDICAMENTO' | 'ALIMENTAÇÃO' | 'CONSULTA' | 'OUTRO';
+  cor: string;
+  repeticao?: 'DIARIO' | 'SEMANAL' | 'MENSAL' | null;
+};
+
+async function salvarCompromisso(compromisso: Compromisso) {
+  const compromissos = JSON.parse(await AsyncStorage.getItem('compromissos') || '[]');
+  compromissos.push(compromisso);
+  await AsyncStorage.setItem('compromissos', JSON.stringify(compromissos));
+}
+
+async function carregarCompromissos(): Promise<Compromisso[]> {
+  return JSON.parse(await AsyncStorage.getItem('compromissos') || '[]');
+}
+*/
 
 export default function AgendaScreen() {
   const screenWidth = Dimensions.get('window').width;

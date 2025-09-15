@@ -11,6 +11,10 @@ export default function HomeLayout() {
         name="duvidas"
         options={{ title: 'Dúvidas', headerShown: false }}
       />
+      <Stack.Screen
+        name="intercorrencias" 
+        options={{ title: 'Intercorrências', headerShown: false }}
+      />
     </Stack>
   );
 }
