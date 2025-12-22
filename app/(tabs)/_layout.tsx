@@ -16,6 +16,7 @@ export default function TabLayout() {
 
   return (
     <Tabs
+      initialRouteName="(home)"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
@@ -29,6 +30,13 @@ export default function TabLayout() {
           default: {},
         }),
       }}>
+      {/* Esconde a rota index do tab bar */}
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: null,
+        }}
+      />        
       <Tabs.Screen
         name="(home)"
         options={{

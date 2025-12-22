@@ -51,7 +51,7 @@ export default function DuvidasScreen() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView
-        style={[styles.container, { paddingTop: 0, paddingBottom: insets.bottom }]}
+        style={[styles.container, { paddingTop: 40, paddingBottom: insets.bottom }]}
       >
         {/* Botão voltar */}
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', paddingBottom: 10 }}>

@@ -299,7 +299,7 @@ export const duvidas = [
     ),
     imagemUrl: '',
   },
-  {
+  /*{
     id: '8',
     titulo: 'Eventos adversos',
     conteudo: (
@@ -326,5 +326,5 @@ export const duvidas = [
       </>
     ),
     imagemUrl: '',
-  },
+  },*/
 ];

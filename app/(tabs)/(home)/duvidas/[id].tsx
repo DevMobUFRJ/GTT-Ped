@@ -26,7 +26,10 @@ export default function DuvidaDetailPage() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={{ uri: duvida.imagemUrl }} style={styles.image} resizeMode="cover" />
+      <Image
+        source={require('@/assets/images/GTT-Ped-logo.png')}
+        style={styles.image}
+      />
 
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
@@ -53,9 +56,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   image: {
-    width: '100%',
-    height: 220,
-    backgroundColor: '#ccc',
+    width: '30%',
+    height: '30%',
+    backgroundColor: '#fff',
+    marginTop: 20,
+    marginBottom: -40,
+    aspectRatio: 1,
+    resizeMode: 'contain',
+    alignSelf: 'center',    
   },
   header: {
     flexDirection: 'row',

@@ -1,9 +1,10 @@
 import { intercorrencias } from '@/app/data/intercorrencias';
 import { useRouter } from 'expo-router';
 import { ChevronLeft, Search } from 'lucide-react-native';
-import React, { useMemo, useState } from 'react';
+import React, { isValidElement, ReactNode, useMemo, useState } from 'react';
 import {
   Keyboard,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -20,24 +21,47 @@ export default function intercorrenciasScreen() {
   const insets = useSafeAreaInsets();
   const [searchText, setSearchText] = useState('');
 
-  const filtered = useMemo(() => {
+  const filteredIntercorrencia = useMemo(() => {
     if (!searchText.trim()) return intercorrencias;
     const lowerSearch = searchText.toLowerCase().trim();
 
-    return intercorrencias.filter(({ titulo }) =>
-      titulo.toLowerCase().includes(lowerSearch)
-    );
+    function extractText(node: ReactNode): string {
+      if (typeof node === 'string') {
+        return node;
+      }
+      if (Array.isArray(node)) {
+        return node.map(extractText).join(' ');
+      }
+      if (isValidElement(node)) {
+        const props = node.props as { children?: ReactNode };
+        return extractText(props.children);
+      }
+      return '';
+    }
+
+    return intercorrencias.filter(({ titulo, conteudo }) => {
+      const conteudoStr = extractText(conteudo).toLowerCase();
+      return (
+        titulo.toLowerCase().includes(lowerSearch) ||
+        conteudoStr.includes(lowerSearch)
+      );
+    });
   }, [searchText]);
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView
-        style={[styles.container, { paddingBottom: insets.bottom }]}
+        style={[styles.container, { paddingTop: 40, paddingBottom: insets.bottom }]}
       >
         {/* Botão voltar */}
-        <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
+        <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', paddingBottom: 10 }}>
+          <TouchableOpacity
+            onPress={() => router.back()}
+            style={styles.backButton}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          >
             <ChevronLeft size={28} color="#000" />
+
           </TouchableOpacity>
           <Text style={styles.title}>Intercorrências</Text>
         </View>
@@ -49,24 +73,31 @@ export default function intercorrenciasScreen() {
         >
           {/* Caixa verde com título e busca */}
           <View style={styles.greenBox}>
-            <Text style={styles.subtitle}>Principais intercorrências</Text>
+
+            <Text style={styles.subtitle}>Intercorrencias mais comuns com gastrostomia</Text>
 
             <View style={styles.searchContainer}>
               <Search size={20} color="#ccc" />
               <TextInput
                 style={styles.searchInput}
-                placeholder="Buscar intercorrências..."
+                placeholder="Buscar intercorrencis..."
                 placeholderTextColor="#ccc"
                 value={searchText}
                 onChangeText={setSearchText}
+                keyboardType="default"
                 returnKeyType="search"
               />
             </View>
           </View>
 
-          {filtered.map((item) => (
-            <IntercorrenciaCard key={item.id} id={item.id} titulo={item.titulo} />
+          {filteredIntercorrencia.map((intercorrencia) => (
+            <IntercorrenciaCard
+              key={intercorrencia.id}
+              id={intercorrencia.id}
+              titulo={intercorrencia.titulo}
+            />
           ))}
+
         </ScrollView>
       </SafeAreaView>
     </TouchableWithoutFeedback>
@@ -79,19 +110,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingHorizontal: 20,
   },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingBottom: 10,
-  },
+
   backButton: {
+    alignSelf: 'flex-start',
     padding: 8,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#000',
-  },
+
   greenBox: {
     backgroundColor: '#19856E',
     borderRadius: 16,
@@ -100,23 +124,34 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
+
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+
   subtitle: {
     fontSize: 14,
     color: 'white',
     marginBottom: 16,
   },
+
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', // fundo branco
     borderRadius: 10,
     paddingHorizontal: 12,
     height: 40,
   },
+
   searchInput: {
     flex: 1,
     marginLeft: 8,
-    color: '#000',
+    color: '#000', // texto preto
     fontSize: 16,
+    paddingVertical: Platform.OS === 'ios' ? 6 : 0,
   },
+
 });
