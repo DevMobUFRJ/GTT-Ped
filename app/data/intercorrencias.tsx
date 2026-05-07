@@ -25,6 +25,7 @@ export const intercorrencias = [
         se a sonda está bem posicionada.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/react-logo.png'),
   },
 
   {
@@ -39,6 +40,7 @@ export const intercorrencias = [
         ou do enfermeiro especialista.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -53,6 +55,7 @@ export const intercorrencias = [
         úmida.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -67,6 +70,7 @@ export const intercorrencias = [
         ou enfermeiro do seu filho.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -83,6 +87,7 @@ export const intercorrencias = [
         desapareça.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -96,6 +101,7 @@ export const intercorrencias = [
         sonda, mau cheiro, pus, febre e pele quente, procure um serviço de saúde.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -109,6 +115,7 @@ export const intercorrencias = [
         para que se encaixe perfeitamente na parede abdominal.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -122,6 +129,7 @@ export const intercorrencias = [
         secreção. Trocar sempre que estiver úmido ou sujo.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -136,6 +144,7 @@ export const intercorrencias = [
         outra entrada que é para administração de alimentos e medicamentos.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 
   {
@@ -150,5 +159,7 @@ export const intercorrencias = [
         ou amolecida.
       </Text>
     ),
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
 ];
+export default function Layout() { return null; }

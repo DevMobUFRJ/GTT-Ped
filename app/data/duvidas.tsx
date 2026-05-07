@@ -72,7 +72,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/gastrostomia.png'),
   },
   {
     id: '2',
@@ -117,7 +117,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
   {
     id: '3',
@@ -142,7 +142,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
   {
     id: '4',
@@ -166,7 +166,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
   {
     id: '5',
@@ -251,7 +251,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
   {
     id: '6',
@@ -277,7 +277,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
   {
     id: '7',
@@ -297,7 +297,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },
   /*{
     id: '8',
@@ -325,6 +325,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: '',
+    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
   },*/
 ];
+export default function Layout() { return null; }

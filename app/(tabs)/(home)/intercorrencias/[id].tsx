@@ -27,7 +27,7 @@ export default function IntercorrenciaDetailPage() {
   return (
     <SafeAreaView style={styles.container}>
       <Image
-        source={require('@/assets/images/GTT-Ped-logo.png')}
+        source={intercorrencia.imagemUrl}
         style={styles.image}
       />
 
