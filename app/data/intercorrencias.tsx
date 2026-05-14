@@ -8,6 +8,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
   },
+  paragraph2: {
+    borderWidth: 1,
+    borderColor: '#000',
+    borderStyle: 'solid',
+    padding: 10,
+    borderRadius: 8,
+    marginTop: 20,
+    marginBottom: 10,
+    textAlign: 'justify',
+    fontSize: 16,
+    color: '#000',
+  },
 });
 
 export const intercorrencias = [
@@ -17,15 +29,22 @@ export const intercorrencias = [
     textoBusca:
       'sonda sair emergência gastrostomia cuidador introduzir nova sonda',
     conteudo: (
-      <Text style={styles.paragraph}>
-        Se a sonda sair, levar a criança na emergência mais próxima. O cuidador pode
-        introduzir uma nova sonda, desde que ele seja treinado pelo profissional de
-        saúde. É importante saber o tamanho e ter em casa a sonda de gastrostomia do
-        seu filho. Após repassar a sonda, procurar um serviço de saúde para verificar
-        se a sonda está bem posicionada.
-      </Text>
+      <>
+        <Text style={styles.paragraph}>
+          Se a sonda sair, levar a criança na emergência mais próxima. O cuidador pode
+          introduzir uma nova sonda, desde que ele seja treinado pelo profissional de
+          saúde. É importante saber o tamanho e ter em casa a sonda de gastrostomia do
+          seu filho. Após repassar a sonda, procurar um serviço de saúde para verificar
+          se a sonda está bem posicionada.
+        </Text>
+        <Text style={styles.paragraph2}>
+          <Text style={{ fontWeight: 'bold' }}>Atenção!!! </Text>
+          O óstio da gastrostomia fecha muito rápido, portanto é importante
+          ir imediatamente ao serviço de saúde para a introdução de uma nova sonda.
+        </Text>
+      </>
     ),
-    imagemUrl: require('@/assets/images/react-logo.png'),
+    imagemUrl: require('@/assets/images/se_a_sonda_sair.png'),
   },
 
   {
@@ -40,26 +59,11 @@ export const intercorrencias = [
         ou do enfermeiro especialista.
       </Text>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/dermatite.png'),
   },
 
   {
     id: '3',
-    titulo: 'Em caso de vazamento pelo óstio',
-    textoBusca:
-      'vazamento óstio soro fisiológico compressa gaze secreção',
-    conteudo: (
-      <Text style={styles.paragraph}>
-        Se estiver vazando algo pelo óstio, limpar com soro fisiológico, colocar uma
-        compressa de gaze para proteger a pele, trocando sempre que estiver suja ou
-        úmida.
-      </Text>
-    ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
-  },
-
-  {
-    id: '4',
     titulo: 'Se houver sangramento ao redor',
     textoBusca:
       'sangramento pressão estancar médico enfermeiro',
@@ -70,11 +74,11 @@ export const intercorrencias = [
         ou enfermeiro do seu filho.
       </Text>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/sangramento.png'),
   },
 
   {
-    id: '5',
+    id: '4',
     titulo: 'Em caso de granuloma',
     textoBusca:
       'granuloma limpeza água sabão soro fisiológico pomada',
@@ -87,53 +91,75 @@ export const intercorrencias = [
         desapareça.
       </Text>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/granuloma.png'),
   },
 
   {
-    id: '6',
+    id: '5',
     titulo: 'Se apresentar algum sintoma diferente',
     textoBusca:
       'infecção coceira pele vermelha dor pus febre mau cheiro',
     conteudo: (
-      <Text style={styles.paragraph}>
-        Se estiver com infecção, se apresentar coceira, pele vermelha, dor ao mexer a
-        sonda, mau cheiro, pus, febre e pele quente, procure um serviço de saúde.
-      </Text>
+      <>
+        <Text style={styles.paragraph}>
+          Se estiver com infecção, se apresentar coceira, pele vermelha, dor ao mexer a
+          sonda, mau cheiro, pus, febre e pele quente, procure um serviço de saúde.
+        </Text>
+        <Text style={styles.paragraph2}>
+          <Text style={{ fontWeight: 'bold' }}>Atenção!!! </Text>
+          Pode ser necessário o uso de antibiótico, por isso, já no início dos primeiros
+          sintomas, procure um serviço de saúde para uma avaliação e evitar complicações.
+        </Text>
+      </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/sintoma_diferente.png'),
   },
 
   {
-    id: '7',
+    id: '6',
     titulo: 'Se a sonda migrar',
     textoBusca:
       'sonda migrar tração ajustar anteparo parede abdominal',
     conteudo: (
-      <Text style={styles.paragraph}>
-        Se a sonda migrar, aplicar uma leve tração e, em seguida, ajustar o anteparo
-        para que se encaixe perfeitamente na parede abdominal.
-      </Text>
+      <>
+        <Text style={styles.paragraph}>
+          Se a sonda migrar, aplicar uma leve tração e, em seguida, ajustar o anteparo
+          para que se encaixe perfeitamente na parede abdominal.
+        </Text>
+        <Text style={styles.paragraph2}>
+          <Text style={{ fontWeight: 'bold' }}>Atenção!!! </Text>
+          Se a sonda estiver muito introduzida e tiver dificuldade de tracionar, não
+          force, procure um serviço de saúde para uma avaliação.
+        </Text>
+      </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/se_sonda_migrar.png'),
   },
 
   {
-    id: '8',
+    id: '7',
     titulo: 'Em caso de extravasamento pelo óstio',
     textoBusca:
       'extravasamento óstio secreção gaze umidade',
     conteudo: (
-      <Text style={styles.paragraph}>
-        Se tiver extravasamento pelo óstio, utilizar gaze para absorver o excesso de
-        secreção. Trocar sempre que estiver úmido ou sujo.
-      </Text>
+      <>
+        <Text style={styles.paragraph}>
+          Em caso de extravasamento, limpar a pele ao redor do óstio com soro fisiológico
+          e colocar uma compressa de gaze para absorver o excesso de umidade e proteger a
+          pele, trocando sempre que estiver suja ou úmida.
+        </Text>
+        <Text style={styles.paragraph2}>
+          <Text style={{ fontWeight: 'bold' }}>Atenção!!! </Text>
+          Procurar um serviço de saúde para ver a causa do extravasamento, pois pode ser
+          necessário trocar a sonda ou ajustar a que está no óstio.
+        </Text>
+      </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/extravasamento_ostio.png'),
   },
 
   {
-    id: '9',
+    id: '8',
     titulo: 'Via correta da sonda',
     textoBusca:
       'via correta sonda balão medicamentos alimentos',
@@ -144,22 +170,29 @@ export const intercorrencias = [
         outra entrada que é para administração de alimentos e medicamentos.
       </Text>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/via_correta_sonda.png'),
   },
 
   {
-    id: '10',
+    id: '9',
     titulo: 'Quando trocar a sonda',
     textoBusca:
       'trocar sonda obstruída quebrada infecção ressecada rachada',
     conteudo: (
-      <Text style={styles.paragraph}>
-        A troca da sonda deve ocorrer se estiver obstruída, a tampa ou o tubo da sonda
-        quebrar, em caso de infecção, se estiver ressecada, rachada, opaca, endurecida
-        ou amolecida.
-      </Text>
+      <>
+        <Text style={styles.paragraph}>
+          A troca da sonda deve ocorrer se estiver obstruída, a tampa ou o tubo da sonda
+          quebrar, em caso de infecção, se estiver ressecada, rachada, opaca, endurecida
+          ou amolecida.
+        </Text>
+        <Text style={styles.paragraph2}>
+          <Text style={{ fontWeight: 'bold' }}>Atenção!!! </Text>
+          Realizar a troca da sonda somente se você for treinado e tiver segurança para
+          realizar o procedimento, caso contrário, procure um serviço de saúde.
+        </Text>
+      </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/trocar_sonda.png'),
   },
 ];
 export default function Layout() { return null; }

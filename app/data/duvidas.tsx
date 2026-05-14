@@ -117,7 +117,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/cuidado_ostio.png'),
   },
   {
     id: '3',
@@ -142,7 +142,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/cuidado_sonda_botton.png'),
   },
   {
     id: '4',
@@ -151,7 +151,7 @@ export const duvidas = [
       <>
         <View style={styles.listContainer}>
           {[
-            'Prender a sonda no corpo da criança (pode ser presa com Micropore);',
+            'Prender a sonda no corpo da criança (pode ser presa com Micropore);',
             'Pode dar banho na banheira (ideal água abaixo do nível da gastrostomia) ou no chuveiro;',
             'Evitar água quente demais, pois pode irritar a pele;',
             'Usar sabonete neutro e toalhas macias;',
@@ -166,7 +166,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/cuidado_banho.png'),
   },
   {
     id: '5',
@@ -251,7 +251,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/cuidado_alimentacao.png'),
   },
   {
     id: '6',
@@ -277,7 +277,7 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/cuidado_medicacao.png'),
   },
   {
     id: '7',
@@ -297,35 +297,8 @@ export const duvidas = [
         </View>
       </>
     ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
+    imagemUrl: require('@/assets/images/cuidado_seringa.png'),
   },
-  /*{
-    id: '8',
-    titulo: 'Eventos adversos',
-    conteudo: (
-      <>
-        <View style={styles.listContainer}>
-          {[
-            'Se a sonda sair, levar a criança na emergência mais próxima. O cuidador pode introduzir uma nova sonda, desde que ele seja treinado pelo profissional de saúde. É importante saber o tamanho e ter em casa a sonda de gastrostomia do seu filho. Após repassar a sonda, procurar um serviço de saúde para verificar se a sonda está bem posicionada;',
-            'Em caso de dermatite, não esfregar a pele irritada, proteger com gaze seca, trocando sempre que estiver suja e levar a criança para uma avaliação médica ou do enfermeiro especialista;',
-            'Se estiver vazando algo pelo óstio, limpar com soro fisiológico, colocar uma compressa de gaze para proteger a pele, trocando sempre que estiver suja ou úmida;',
-            'Se houver sangramento ao redor, aplicar pressão para estancar o sangramento por até dez minutos. Se o sangramento não parar, entre em contato com o médico ou enfermeiro do seu filho;',
-            'Em caso de granuloma, este deve ser tratado logo após o aparecimento. Limpar sempre o local com água e sabão ou soro fisiológico e cobrir com uma gaze para evitar molhar o granuloma. Uma pomada ou creme especial será prescrito para ser aplicado no granuloma (não na pele ao redor) até que o tecido de granulação desapareça;',
-            'Se estiver com infecção, se apresentar coceira, pele vermelha, dor ao mexer a sonda, mau cheiro, pus, febre e pele quente, procure um serviço de saúde;',
-            'Se a sonda migrar, aplicar uma leve tração e, em seguida, ajustar o anteparo para que se encaixe perfeitamente na parede abdominal;',
-            'Se tiver extravasamento pelo óstio, utilizar gaze para absorver o excesso de secreção. Trocar sempre que estiver úmido ou sujo;',
-            'Observar se os medicamentos e alimentos estão sendo administrados pela via correta da sonda. A entrada para insuflar o balão geralmente é colorida, a outra entrada que é para administração de alimentos e medicamentos;',
-            'A troca da sonda deve ocorrer se estiver obstruída, a tampa ou o tubo da sonda quebrar, em caso de infecção, se estiver ressecada, rachada, opaca, endurecida ou amolecida.',
-          ].map((item, index) => (
-            <View key={index} style={styles.listItemRow}>
-              <Text style={styles.listNumber}>{index + 1}.</Text>
-              <Text style={styles.listItemText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-      </>
-    ),
-    imagemUrl: require('@/assets/images/GTT-Ped-logo.png'),
-  },*/
+ 
 ];
 export default function Layout() { return null; }

@@ -74,13 +74,13 @@ export default function intercorrenciasScreen() {
           {/* Caixa verde com título e busca */}
           <View style={styles.greenBox}>
 
-            <Text style={styles.subtitle}>Intercorrencias mais comuns com gastrostomia</Text>
+            <Text style={styles.subtitle}>Intercorrências mais comuns com gastrostomia</Text>
 
             <View style={styles.searchContainer}>
               <Search size={20} color="#ccc" />
               <TextInput
                 style={styles.searchInput}
-                placeholder="Buscar intercorrencis..."
+                placeholder="Buscar intercorrências..."
                 placeholderTextColor="#ccc"
                 value={searchText}
                 onChangeText={setSearchText}
